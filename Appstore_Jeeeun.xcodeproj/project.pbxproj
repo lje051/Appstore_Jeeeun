@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		23F98B4B6C7437908966519E /* Pods_Appstore_Jeeeun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF548AAB7C96FB27D795243E /* Pods_Appstore_Jeeeun.framework */; };
+		4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */; };
+		4EA5420124EEA2B500EDB4A1 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5420024EEA2B500EDB4A1 /* WordCell.swift */; };
 		4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EBC24EE51B30049E79E /* AppDelegate.swift */; };
 		4EE10EC424EE51B30049E79E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE10EC224EE51B30049E79E /* Main.storyboard */; };
 		4EE10EC624EE51B50049E79E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE10EC524EE51B50049E79E /* Assets.xcassets */; };
@@ -19,9 +21,14 @@
 		4EE10EDC24EE5ACA0049E79E /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EDB24EE5ACA0049E79E /* UpdateViewController.swift */; };
 		4EE10EDE24EE5AD50049E79E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EDD24EE5AD50049E79E /* SearchViewController.swift */; };
 		4EE10EE324EE74C90049E79E /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EE224EE74C90049E79E /* SearchViewCell.swift */; };
+		4EE10EE824EE7C6C0049E79E /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EE724EE7C6C0049E79E /* FetchData.swift */; };
+		4EE10EEB24EE7CBA0049E79E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EEA24EE7CBA0049E79E /* SearchResult.swift */; };
+		4EE10EEE24EE819D0049E79E /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EED24EE819D0049E79E /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
+		4EA5420024EEA2B500EDB4A1 /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		4EE10EB924EE51B30049E79E /* Appstore_Jeeeun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appstore_Jeeeun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE10EBC24EE51B30049E79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EE10EC324EE51B30049E79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -35,6 +42,9 @@
 		4EE10EDB24EE5ACA0049E79E /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		4EE10EDD24EE5AD50049E79E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4EE10EE224EE74C90049E79E /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		4EE10EE724EE7C6C0049E79E /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
+		4EE10EEA24EE7CBA0049E79E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		4EE10EED24EE819D0049E79E /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		7A27B40EBF4CFBF4CE93C32B /* Pods-Appstore_Jeeeun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstore_Jeeeun.release.xcconfig"; path = "Target Support Files/Pods-Appstore_Jeeeun/Pods-Appstore_Jeeeun.release.xcconfig"; sourceTree = "<group>"; };
 		DF548AAB7C96FB27D795243E /* Pods_Appstore_Jeeeun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appstore_Jeeeun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4326B375247AD37D9D5129 /* Pods-Appstore_Jeeeun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstore_Jeeeun.debug.xcconfig"; path = "Target Support Files/Pods-Appstore_Jeeeun/Pods-Appstore_Jeeeun.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +83,9 @@
 		4EE10EBB24EE51B30049E79E /* Appstore_Jeeeun */ = {
 			isa = PBXGroup;
 			children = (
+				4EE10EEC24EE81870049E79E /* Helper */,
+				4EE10EE924EE7CAB0049E79E /* Model */,
+				4EE10EE624EE7C410049E79E /* FetchData */,
 				4EE10EE124EE74660049E79E /* Search */,
 				4EE10ED024EE528B0049E79E /* Controller */,
 				4EE10EBC24EE51B30049E79E /* AppDelegate.swift */,
@@ -101,8 +114,34 @@
 			isa = PBXGroup;
 			children = (
 				4EE10EE224EE74C90049E79E /* SearchViewCell.swift */,
+				4EA5420024EEA2B500EDB4A1 /* WordCell.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		4EE10EE624EE7C410049E79E /* FetchData */ = {
+			isa = PBXGroup;
+			children = (
+				4EE10EE724EE7C6C0049E79E /* FetchData.swift */,
+			);
+			path = FetchData;
+			sourceTree = "<group>";
+		};
+		4EE10EE924EE7CAB0049E79E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4EE10EEA24EE7CBA0049E79E /* SearchResult.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4EE10EEC24EE81870049E79E /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4EE10EED24EE819D0049E79E /* UIView+Layout.swift */,
+				4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		97FBE50CC37BEDC1EDEDB0CB /* Frameworks */ = {
@@ -238,13 +277,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EE10EE324EE74C90049E79E /* SearchViewCell.swift in Sources */,
+				4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */,
 				4EE10EDA24EE5AB70049E79E /* AppViewController.swift in Sources */,
+				4EE10EEB24EE7CBA0049E79E /* SearchResult.swift in Sources */,
 				4EE10EDE24EE5AD50049E79E /* SearchViewController.swift in Sources */,
 				4EE10ED824EE5AAB0049E79E /* TodayViewController.swift in Sources */,
 				4EE10ED624EE5A9D0049E79E /* GameViewController.swift in Sources */,
+				4EE10EEE24EE819D0049E79E /* UIView+Layout.swift in Sources */,
 				4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */,
 				4EE10ED224EE52950049E79E /* MainTabController.swift in Sources */,
+				4EE10EE824EE7C6C0049E79E /* FetchData.swift in Sources */,
 				4EE10EDC24EE5ACA0049E79E /* UpdateViewController.swift in Sources */,
+				4EA5420124EEA2B500EDB4A1 /* WordCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

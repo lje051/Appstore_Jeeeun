@@ -128,14 +128,19 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == TableCell.wordCell.rawValue {
         let cell = tableView.dequeueReusableCell(withIdentifier: WordTableViewCell.identifier, for: indexPath) as! WordTableViewCell
-            cell.wordTableViewController.view.backgroundColor = .orange
+           
         cell.wordTableViewController.searchList = Defaults[\.searchList]
         cell.wordTableViewController.tableView.reloadData()
         // set the text from the data model
       
         return cell
         }else   {
-            return UITableViewCell()
+            
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "blankCell", for: indexPath)
+                     
+            return cell
      }
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -143,15 +148,13 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == TableCell.wordCell.rawValue {
-              return  UITableView.automaticDimension
-        }else{
-            return 1
-        }
+       
+            return UITableView.automaticDimension
+      
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == TableCell.wordCell.rawValue {
-              return  UITableView.automaticDimension
+            return CGFloat(Defaults[\.searchList].count * 44 + 90)
         }else{
             return 1
         }

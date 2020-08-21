@@ -26,6 +26,7 @@ class WordTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.isScrollEnabled = false
         tableView.register(WordTextViewCell.self, forCellReuseIdentifier: WordTextViewCell.identifier)
        tableView.estimatedRowHeight = 44.0
         tableView.reloadData()

@@ -34,7 +34,7 @@ class WordTableViewCell : UITableViewCell {
         addSubview(recentSearchLabel)
         addSubview(wordTableViewController.view)
         recentSearchLabel.anchor(top: self.topAnchor, leading: self.leadingAnchor, bottom: nil, trailing: self.trailingAnchor, padding: .init(top: 10, left: 16, bottom: 0, right: 16), size: .init(width: 0, height: 90))
-        wordTableViewController.view.anchor(top: recentSearchLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 5, right: 0))
+        wordTableViewController.view.anchor(top: recentSearchLabel.bottomAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 5, right: 0))
         
     }
     

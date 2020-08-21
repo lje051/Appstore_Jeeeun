@@ -34,7 +34,7 @@ class WordTextViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(wordTextLabel)
-        wordTextLabel.anchor(top:nil, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: .init(top: 0, left: 10, bottom: 4, right: 10))
+        wordTextLabel.anchor(top:self.topAnchor, leading: self.leadingAnchor, bottom: self.bottomAnchor, trailing: self.trailingAnchor, padding: .init(top:3, left: 10, bottom: 3, right: 10))
     }
     
     required init?(coder: NSCoder) {

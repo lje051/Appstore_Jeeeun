@@ -8,8 +8,13 @@
 import SwiftyUserDefaults
 import UIKit
 
-class SearchViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource  {
-    
+class SearchViewController: UITableViewController, UISearchBarDelegate  {
+
+    enum TableCell: Int {
+         case wordCell = 0
+         case empty
+
+     }
     //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     //        <#code#>
     //    }
@@ -21,40 +26,27 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
     fileprivate var searchResults = [Result]()
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     fileprivate let cellId = "searchView"
-    var searchList : [String] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+  
     var timer: Timer?
-    let tableView = UITableView(frame: .zero, style: .plain)
-    fileprivate let recentSearchLabel: UILabel = {
-        let label = UILabel()
-        label.text = "최근 검색어"
-        label.textAlignment = .left
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        return label
-    }()
-    
+
+
     
     override func viewDidLoad() {
         self.navigationItem.title = "검색"
         setupSearchBar()
-        view.addSubview(recentSearchLabel)
-        view.addSubview(tableView)
-        // view.addSubview(tableView)
-        recentSearchLabel.anchor(top: self.view.topAnchor, leading: self.view.leadingAnchor, bottom: nil, trailing: self.view.trailingAnchor, padding: .init(top: 160, left: 16, bottom: 0, right: 16), size: .init(width: 0, height: 90))
-        tableView.anchor(top: recentSearchLabel.bottomAnchor, leading: self.view.leadingAnchor, bottom: self.view.bottomAnchor, trailing: self.view.trailingAnchor, padding: .init(top: 0, left: 16, bottom: 10, right: 16))
-        tableView.dataSource = self
-        tableView.delegate = self
-        
-        tableView.register(WordCell.self, forCellReuseIdentifier: WordCell.identifier)
+       
+  
+   
+      
+       
+        tableView.separatorStyle = .none
+        tableView.register(WordTableViewCell.self, forCellReuseIdentifier: WordTableViewCell.identifier)
         tableView.reloadData()
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        searchList = Defaults[\.searchList]
+       
         
     }
     fileprivate func setupSearchBar() {
@@ -62,11 +54,11 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         self.navigationItem.searchController = self.searchController
         self.navigationItem.hidesSearchBarWhenScrolling = false
         self.searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.delegate = self
+        self.searchController.searchBar.delegate = self
     }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width, height: 350)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return .init(width: view.frame.width, height: 350)
+//    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
@@ -122,26 +114,47 @@ class SearchViewController: UICollectionViewController, UICollectionViewDelegate
         })
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // enterSearchTermLabel.isHidden = appResults.count != 0
-        return 0
-    }
+//    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        // enterSearchTermLabel.isHidden = appResults.count != 0
+//        return 0
+//    }
+//
+//    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchViewCell
+//        //          cell.appResult = appResults[indexPath.item]
+//        return cell
+//    }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchViewCell
-        //          cell.appResult = appResults[indexPath.item]
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: WordCell.identifier, for: indexPath) as! WordCell
-        
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == TableCell.wordCell.rawValue {
+        let cell = tableView.dequeueReusableCell(withIdentifier: WordTableViewCell.identifier, for: indexPath) as! WordTableViewCell
+            cell.wordTableViewController.view.backgroundColor = .orange
+        cell.wordTableViewController.searchList = Defaults[\.searchList]
+        cell.wordTableViewController.tableView.reloadData()
         // set the text from the data model
-        cell.wordTextLabel.text = self.searchList[indexPath.row]
+      
         return cell
+        }else   {
+            return UITableViewCell()
+     }
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  self.searchList.count
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == TableCell.wordCell.rawValue {
+              return  UITableView.automaticDimension
+        }else{
+            return 1
+        }
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == TableCell.wordCell.rawValue {
+              return  UITableView.automaticDimension
+        }else{
+            return 1
+        }
+    }
+        
 }

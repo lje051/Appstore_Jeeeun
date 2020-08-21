@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,7 +40,7 @@
                         <segue destination="hOW-37-IWZ" kind="relationship" relationship="viewControllers" id="1z2-HN-W9i"/>
                         <segue destination="Mtd-y1-lWI" kind="relationship" relationship="viewControllers" id="6rr-GV-TNW"/>
                         <segue destination="FZd-8q-SCE" kind="relationship" relationship="viewControllers" id="2zv-e2-Ygg"/>
-                        <segue destination="Gts-gv-JHT" kind="relationship" relationship="viewControllers" id="60t-zd-Rs2"/>
+                        <segue destination="p8I-dZ-e4h" kind="relationship" relationship="viewControllers" id="qCW-Rm-Rk8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wr0-Y1-6Fh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -62,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPc-Mq-V1I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5060.8695652173919" y="-678.34821428571422"/>
+            <point key="canvasLocation" x="5971.0144927536239" y="-678.34821428571422"/>
         </scene>
         <!--AppViewController-->
         <scene sceneID="D3p-A4-gVV">
@@ -97,58 +96,52 @@
             <point key="canvasLocation" x="864" y="-839"/>
         </scene>
         <!--SearchViewController-->
-        <scene sceneID="wfh-5g-OP5">
+        <scene sceneID="y4j-Lb-ecL">
             <objects>
-                <collectionViewController storyboardIdentifier="SearchViewController" title="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WY2-D5-uSX" customClass="SearchViewController" customModule="Appstore_Jeeeun" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="J6g-4c-rNZ">
+                <tableViewController storyboardIdentifier="SearchViewController" title="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AeC-ce-cWM" customClass="SearchViewController" customModule="Appstore_Jeeeun" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vxt-E6-WkV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mcx-Mz-t0e">
-                            <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PFs-VC-xtH">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="oT8-Wq-QEp">
-                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BRb-gl-LDW">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BRb-gl-LDW" id="nHR-e0-8xF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </collectionViewCellContentView>
-                            </collectionViewCell>
-                        </cells>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="WY2-D5-uSX" id="iAS-50-hor"/>
-                            <outlet property="delegate" destination="WY2-D5-uSX" id="qP1-yr-gc8"/>
+                            <outlet property="dataSource" destination="AeC-ce-cWM" id="J2f-NA-iFI"/>
+                            <outlet property="delegate" destination="AeC-ce-cWM" id="n7Y-Ze-gi7"/>
                         </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="Ohj-qB-l4U"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="reJ-n1-TXc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9NS-zg-6l2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iww-4g-Me0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="-731.25"/>
+            <point key="canvasLocation" x="3244.9275362318845" y="-599.33035714285711"/>
         </scene>
         <!--Item-->
-        <scene sceneID="lYf-ko-Q0f">
+        <scene sceneID="mtv-Bg-dhm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gts-gv-JHT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="sU6-zP-BgI"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p8I-dZ-e4h" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1iq-1h-Vjf"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="IX3-FQ-NH9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="D4q-fJ-lEX">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WY2-D5-uSX" kind="relationship" relationship="rootViewController" id="U8T-ih-HcL"/>
+                        <segue destination="AeC-ce-cWM" kind="relationship" relationship="rootViewController" id="grO-Dp-Xp0"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="o7d-b1-S9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mm-4u-kQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1818.840579710145" y="-731.25"/>
+            <point key="canvasLocation" x="2334.7826086956525" y="-599.33035714285711"/>
         </scene>
     </scenes>
 </document>

@@ -20,7 +20,7 @@ class DetailInfoCell: UICollectionViewCell {
     var detailInfo: Result! {
          didSet {
              appNameLabel.text = detailInfo?.trackName
-//             releaseNotesLabel.text = app?.releaseNotes
+             descLabel.text = detailInfo?.artistName
            
                            if  let artworkUrl100 = URL(string: detailInfo?.artworkUrl100 ?? ""){
                             appIconImv.stylingImv()

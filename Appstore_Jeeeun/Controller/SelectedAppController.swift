@@ -10,7 +10,7 @@ import UIKit
 
 //private let reuseIdentifier = "selectedAppController"
 
-class SelectedAppController: UICollectionViewController {
+class SelectedAppController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var detailInfo: Result? 
     //var reviews: Reviews?
     var appId:String?
@@ -50,7 +50,7 @@ class SelectedAppController: UICollectionViewController {
             }
         }
         
-//        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
+        //        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
         //         FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: (reviews: Reviews?, err) in
         //
         //               if let err = err {
@@ -67,53 +67,61 @@ class SelectedAppController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      
-            return 1
-       
+        
+        return 2
+        
         
     }
     
-           override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.item == 0 {
+            //profilecell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailInfoCell", for: indexPath) as! DetailInfoCell
+            cell.detailInfo = detailInfo
+            return cell
+        }
+        else {
+            //horizontalController
+            let layout =  UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+        
 
-               //if indexPath.item == 0 {
-                //profilecell
-                   let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailInfoCell", for: indexPath) as! DetailInfoCell
-                   cell.detailInfo = detailInfo
-                   return cell
-            //   }
-            //   else if indexPath.item == 1 {
-             //   horizontalController
-    //               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: previewCellId, for: indexPath) as! PreviewCell
-    //               cell.horizontalController.app = self.app
-    //               return cell
-           //    } else {
-                //평가및 리뷰
-    //               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewCellId, for: indexPath) as! ReviewRowCell
-    //               cell.reviewsController.reviews = self.reviews
-    //               return cell
-            //   }
-           }
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
+            cell.horizontalController.detailInfo = self.detailInfo
+            
+            return cell
+        }
+        //else {
+        //평가및 리뷰
+        //               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewCellId, for: indexPath) as! ReviewRowCell
+        //               cell.reviewsController.reviews = self.reviews
+        //               return cell
+        //   }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var height: CGFloat = 280
+        var height: CGFloat = 500
         
         if indexPath.item == 0 {
-//                           // calculate the necessary size for our cell somehow
-//                           let dummyCell = AppDetailCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
-//                           dummyCell.app = app
-//                           dummyCell.layoutIfNeeded()
-//
-//                           let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 1000))
-//                           height = estimatedSize.height
-        }
-//        else if indexPath.item == 1 {
-//            height = 500
-//        } else {
-//            height = 280
-//        }
+            //                           // calculate the necessary size for our cell somehow
+            //                           let dummyCell = AppDetailCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
+            //                           dummyCell.app = app
+            //                           dummyCell.layoutIfNeeded()
+            //
+            //                           let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 1000))
+            //                           height = estimatedSize.height
+        } else if indexPath.item == 1 {
+                   height = 500
+               } 
+        //        else if indexPath.item == 1 {
+        //            height = 500
+        //        } else {
+        //            height = 280
+        //        }
         
-        return .init(width: view.frame.width, height: height)
+        return .init(width: self.view.frame.width, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -123,7 +131,7 @@ class SelectedAppController: UICollectionViewController {
     
     // MARK: UICollectionViewDataSource
     
-
+    
     
     
     

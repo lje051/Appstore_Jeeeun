@@ -1,5 +1,5 @@
 //
-//  WordCell.swift
+//  RecentSearchCell.swift
 //  Appstore_Jeeeun
 //
 //  Created by Jeeeun Lim on 2020/08/20.
@@ -8,9 +8,9 @@
 
 
 import UIKit
-class WordTableViewCell : UITableViewCell {
+class RecentSearchCell : UITableViewCell {
    
-    static let identifier = "wordTableViewCell"
+    static let identifier = "recentSearchCell"
     let wordTableViewController = WordTableViewController()
     
     

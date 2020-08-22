@@ -10,13 +10,7 @@ import UIKit
 
 class WordTableViewController: UITableViewController {
   
-    // private let productImage : UIImageView = {
-    //    let imgView = UIImageView(image:#imageLiteral(resourceName: <#T##String#>))
-    // imgView.contentMode = .scaleAspectFit
-    // imgView.clipsToBounds = true
-    // return imgView
-    // }()
-    //
+   
     var searchList : [String] = [] {
         didSet {
             tableView.reloadData()
@@ -43,6 +37,7 @@ class WordTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return self.searchList.count
     }
 

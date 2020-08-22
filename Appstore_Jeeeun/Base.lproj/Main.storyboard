@@ -236,7 +236,7 @@
         <scene sceneID="YdX-BX-O5w">
             <objects>
                 <collectionViewController storyboardIdentifier="selectedAppController" title="SelectedAppController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S62-vp-J8j" customClass="SelectedAppController" customModule="Appstore_Jeeeun" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" contentInsetAdjustmentBehavior="never" dataMode="prototypes" id="yJ0-lj-aVh">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yJ0-lj-aVh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

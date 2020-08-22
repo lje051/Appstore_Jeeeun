@@ -80,12 +80,22 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         
         return true
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        showRecentWord = false
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
         sortedSearchList = searchList.filter({$0.lowercased().contains(searchText.lowercased())})
         print("\(sortedSearchList)")
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text ?? "")
@@ -94,7 +104,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
             $0.range(of: searchText, options: .caseInsensitive) != nil
         })
         
-        if itemExists {
+        if !itemExists {
             Defaults[\.searchList].append(searchText)
         }
         
@@ -117,10 +127,10 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
                 print("\(self.searchResults)")
                 
                 self.showResultPage = true
-
-                   DispatchQueue.main.async {
-                             self.tableView.reloadData()
-                         } 
+                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 //                         self.collectionView.reloadData()
                 //                     }
             }
@@ -128,16 +138,18 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         })
     }
     
-    //    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    //        // enterSearchTermLabel.isHidden = appResults.count != 0
-    //        return 0
-    //    }
-    //
-    //    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! SearchViewCell
-    //        //          cell.appResult = appResults[indexPath.item]
-    //        return cell
-    //    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if showResultPage{
+            let appId = String(searchResults[indexPath.row].trackId)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let selectedAppController = storyboard.instantiateViewController(withIdentifier: "selectedAppController") as! SelectedAppController
+            
+            selectedAppController.appId = appId
+            self.navigationController?.pushViewController(selectedAppController, animated: true)
+            
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if showRecentWord {
@@ -147,8 +159,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
             return cell
         }else if showResultPage{
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
-              cell.appResult = searchResults[indexPath.row]
-                  return cell
+            cell.appResult = searchResults[indexPath.row]
+            return cell
         }
         else{
             // if indexPath.row == TableCell.wordCell.rawValue {
@@ -167,7 +179,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         if showRecentWord {
             return self.sortedSearchList.count
         }else if showResultPage{
-              return self.searchResults.count
+            return self.searchResults.count
         }
         else{
             return 1
@@ -179,6 +191,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if showRecentWord {
             return 44
+        }else if showResultPage{
+            return 330
         }else{
             //  if indexPath.row == TableCell.wordCell.rawValue {
             return CGFloat(Defaults[\.searchList].count * 44 + 90)

@@ -14,6 +14,12 @@
 		4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */; };
 		4EA5420124EEA2B500EDB4A1 /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */; };
 		4EB1C4BB24F0E05100C51A65 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4BA24F0E05100C51A65 /* SearchResultCell.swift */; };
+		4EB1C4BE24F0F3C300C51A65 /* Ex+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4BD24F0F3C300C51A65 /* Ex+UIImageView.swift */; };
+		4EB1C4C124F0FC9600C51A65 /* SelectedAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C024F0FC9600C51A65 /* SelectedAppController.swift */; };
+		4EB1C4C324F0FF2C00C51A65 /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C224F0FF2C00C51A65 /* Reviews.swift */; };
+		4EB1C4C524F107AE00C51A65 /* DetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */; };
+		4EB1C4C724F1170A00C51A65 /* PrescreenshotMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C624F1170A00C51A65 /* PrescreenshotMainCell.swift */; };
+		4EB1C4C924F117A600C51A65 /* ScreenshotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */; };
 		4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EBC24EE51B30049E79E /* AppDelegate.swift */; };
 		4EE10EC424EE51B30049E79E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE10EC224EE51B30049E79E /* Main.storyboard */; };
 		4EE10EC624EE51B50049E79E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE10EC524EE51B50049E79E /* Assets.xcassets */; };
@@ -36,6 +42,12 @@
 		4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchCell.swift; sourceTree = "<group>"; };
 		4EB1C4BA24F0E05100C51A65 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		4EB1C4BD24F0F3C300C51A65 /* Ex+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIImageView.swift"; sourceTree = "<group>"; };
+		4EB1C4C024F0FC9600C51A65 /* SelectedAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAppController.swift; sourceTree = "<group>"; };
+		4EB1C4C224F0FF2C00C51A65 /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoCell.swift; sourceTree = "<group>"; };
+		4EB1C4C624F1170A00C51A65 /* PrescreenshotMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrescreenshotMainCell.swift; sourceTree = "<group>"; };
+		4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsController.swift; sourceTree = "<group>"; };
 		4EE10EB924EE51B30049E79E /* Appstore_Jeeeun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appstore_Jeeeun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE10EBC24EE51B30049E79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EE10EC324EE51B30049E79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,8 +85,19 @@
 			children = (
 				4EE10EED24EE819D0049E79E /* UIView+Layout.swift */,
 				4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */,
+				4EB1C4BD24F0F3C300C51A65 /* Ex+UIImageView.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		4EB1C4BF24F0FC6700C51A65 /* AppDetailTableGroup */ = {
+			isa = PBXGroup;
+			children = (
+				4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */,
+				4EB1C4C624F1170A00C51A65 /* PrescreenshotMainCell.swift */,
+				4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */,
+			);
+			path = AppDetailTableGroup;
 			sourceTree = "<group>";
 		};
 		4EE10EB024EE51B30049E79E = {
@@ -98,11 +121,12 @@
 		4EE10EBB24EE51B30049E79E /* Appstore_Jeeeun */ = {
 			isa = PBXGroup;
 			children = (
+				4EB1C4BF24F0FC6700C51A65 /* AppDetailTableGroup */,
 				4EB1C4BC24F0E42F00C51A65 /* Extension */,
 				4EE10EEC24EE81870049E79E /* Helper */,
 				4EE10EE924EE7CAB0049E79E /* Model */,
 				4EE10EE624EE7C410049E79E /* FetchData */,
-				4EE10EE124EE74660049E79E /* Search */,
+				4EE10EE124EE74660049E79E /* SearchTableGroup */,
 				4EE10ED024EE528B0049E79E /* Controller */,
 				4EE10EBC24EE51B30049E79E /* AppDelegate.swift */,
 				4EE10EC224EE51B30049E79E /* Main.storyboard */,
@@ -116,18 +140,19 @@
 		4EE10ED024EE528B0049E79E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4EE10EDD24EE5AD50049E79E /* SearchViewController.swift */,
 				4EE10ED124EE52950049E79E /* MainTabController.swift */,
 				4EE10ED524EE5A9D0049E79E /* GameViewController.swift */,
 				4EE10ED724EE5AAB0049E79E /* TodayViewController.swift */,
 				4EE10ED924EE5AB70049E79E /* AppViewController.swift */,
 				4EE10EDB24EE5ACA0049E79E /* UpdateViewController.swift */,
-				4EE10EDD24EE5AD50049E79E /* SearchViewController.swift */,
 				4E19CAE924EF77DC004E0AB5 /* WordTableViewController.swift */,
+				4EB1C4C024F0FC9600C51A65 /* SelectedAppController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		4EE10EE124EE74660049E79E /* Search */ = {
+		4EE10EE124EE74660049E79E /* SearchTableGroup */ = {
 			isa = PBXGroup;
 			children = (
 				4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */,
@@ -135,7 +160,7 @@
 				4E707DE624F0C7C3004F52B9 /* RecommendedWordCell.swift */,
 				4EB1C4BA24F0E05100C51A65 /* SearchResultCell.swift */,
 			);
-			path = Search;
+			path = SearchTableGroup;
 			sourceTree = "<group>";
 		};
 		4EE10EE624EE7C410049E79E /* FetchData */ = {
@@ -150,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				4EE10EEA24EE7CBA0049E79E /* SearchResult.swift */,
+				4EB1C4C224F0FF2C00C51A65 /* Reviews.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,13 +319,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EB1C4C124F0FC9600C51A65 /* SelectedAppController.swift in Sources */,
+				4EB1C4C324F0FF2C00C51A65 /* Reviews.swift in Sources */,
 				4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */,
 				4EE10EDA24EE5AB70049E79E /* AppViewController.swift in Sources */,
 				4E707DE724F0C7C3004F52B9 /* RecommendedWordCell.swift in Sources */,
+				4EB1C4BE24F0F3C300C51A65 /* Ex+UIImageView.swift in Sources */,
 				4EE10EEB24EE7CBA0049E79E /* SearchResult.swift in Sources */,
 				4EE10EDE24EE5AD50049E79E /* SearchViewController.swift in Sources */,
 				4EE10ED824EE5AAB0049E79E /* TodayViewController.swift in Sources */,
 				4EB1C4BB24F0E05100C51A65 /* SearchResultCell.swift in Sources */,
+				4EB1C4C524F107AE00C51A65 /* DetailInfoCell.swift in Sources */,
+				4EB1C4C924F117A600C51A65 /* ScreenshotsController.swift in Sources */,
 				4E19CAEC24EF7B63004E0AB5 /* WordTextViewCell.swift in Sources */,
 				4EE10ED624EE5A9D0049E79E /* GameViewController.swift in Sources */,
 				4EE10EEE24EE819D0049E79E /* UIView+Layout.swift in Sources */,
@@ -309,6 +340,7 @@
 				4E19CAEA24EF77DC004E0AB5 /* WordTableViewController.swift in Sources */,
 				4EE10EDC24EE5ACA0049E79E /* UpdateViewController.swift in Sources */,
 				4EA5420124EEA2B500EDB4A1 /* RecentSearchCell.swift in Sources */,
+				4EB1C4C724F1170A00C51A65 /* PrescreenshotMainCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

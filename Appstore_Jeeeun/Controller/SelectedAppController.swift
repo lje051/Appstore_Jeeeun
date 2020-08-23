@@ -12,11 +12,9 @@ import UIKit
 
 class SelectedAppController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var detailInfo: Result? 
-    //var reviews: Reviews?
+    var reviews: Reviews?
     var appId:String?
-    let detailCellId = "detailCellId"
-    let previewCellId = "previewCellId"
-    let reviewCellId = "reviewCellId"
+
     var isReady = false
     
     override func viewDidLoad() {
@@ -49,26 +47,27 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
                 self.collectionView.reloadData()
             }
         }
-//        
-//                let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
-//                 FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: (reviews: Reviews?, err) in
-//        
-//                       if let err = err {
-//                           print("Failed to decode reviews:", err)
-//                           return
-//                       }
-//        
-//                       self.reviews = reviews
-//                       DispatchQueue.main.async {
-//                           self.collectionView.reloadData()
-//                       }
-//        
-//                   }
+        
+    let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
+                FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: Reviews?, err) in
+        
+                       if let err = err {
+                           print("Failed to decode reviews:", err)
+                           return
+                       }
+    
+                    self.reviews = result
+                    print("\(self.reviews)")
+                       DispatchQueue.main.async {
+                           self.collectionView.reloadData()
+                       }
+        
+                   }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 2
+        return 3
         
         
     }
@@ -77,12 +76,12 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         
         if indexPath.item == 0 {
             //profilecell
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailInfoCell", for: indexPath) as! DetailInfoCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailInfoCell.identifier, for: indexPath) as! DetailInfoCell
             cell.detailInfo = detailInfo
             cell.openAppBtn.layer.cornerRadius = 16
             return cell
         }
-        else {
+        else  if indexPath.item == 1 {
             //horizontalController
             let layout =  UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
@@ -93,18 +92,19 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
             
             return cell
         }
-        //else {
-        //평가및 리뷰
-        //               let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reviewCellId, for: indexPath) as! ReviewRowCell
-        //               cell.reviewsController.reviews = self.reviews
-        //               return cell
-        //   }
+        else {
+      //  평가및 리뷰
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewListCell.identifier, for: indexPath) as! ReviewListCell
+                       cell.reviewsController.reviews = self.reviews
+                       return cell
+           }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         var height: CGFloat = 500
-        
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
         if indexPath.item == 0 {
             //                           // calculate the necessary size for our cell somehow
             //                           let dummyCell = AppDetailCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
@@ -122,7 +122,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         //            height = 280
         //        }
         
-        return .init(width: self.view.frame.width, height: height)
+        return .init(width: screenWidth - 15, height: height)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

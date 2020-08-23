@@ -18,23 +18,31 @@ class DetailInfoCell: UICollectionViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var moreBtn: UIButton!
+  
     @IBOutlet weak var whatsNewLabel: UILabel!
-    
+    static let identifier = "detailInfoCell"
     var detailInfo: Result! {
-         didSet {
+        didSet {
             guard let detailInfo = detailInfo else { return }
-             appNameLabel.text = detailInfo.trackName
-             descLabel.text = detailInfo.artistName
+            appNameLabel.text = detailInfo.trackName
+            descLabel.text = detailInfo.artistName
             versionLabel.text = "버전 \(detailInfo.version)"
             whatsNewLabel.text = detailInfo.description
             if  let artworkUrl100 = URL(string: detailInfo.artworkUrl100){
-                            appIconImv.stylingImv()
-                               appIconImv.downloaded(from:artworkUrl100)
-                           }
-                     
-             moreBtn.setTitle(detailInfo.formattedPrice, for: .normal)
-         }
-     }
+                appIconImv.stylingImv()
+                appIconImv.downloaded(from:artworkUrl100)
+            }
+            
+            moreBtn.setTitle(detailInfo.formattedPrice, for: .normal)
+        }
+    }
     
- 
+    @IBAction func renderMoreWhatsNew(_ sender: Any) {
+        whatsNewLabel.numberOfLines = 0
+     
+         self.contentView.layoutIfNeeded()
+           self.contentView.layoutSubviews()
+        
+    }
+    
 }

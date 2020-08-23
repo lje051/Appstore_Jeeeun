@@ -20,6 +20,9 @@
 		4EB1C4C524F107AE00C51A65 /* DetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */; };
 		4EB1C4C924F117A600C51A65 /* ScreenshotsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */; };
 		4EB1C4CB24F1200C00C51A65 /* PreScreenshotMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4CA24F1200C00C51A65 /* PreScreenshotMainCell.swift */; };
+		4EDFA31824F2B3F100EEB991 /* ReviewsDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFA31724F2B3F100EEB991 /* ReviewsDetailController.swift */; };
+		4EDFA31A24F2B47C00EEB991 /* ReviewListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFA31924F2B47C00EEB991 /* ReviewListCell.swift */; };
+		4EDFA31C24F2B64D00EEB991 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDFA31B24F2B64D00EEB991 /* ReviewCell.swift */; };
 		4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EBC24EE51B30049E79E /* AppDelegate.swift */; };
 		4EE10EC424EE51B30049E79E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EE10EC224EE51B30049E79E /* Main.storyboard */; };
 		4EE10EC624EE51B50049E79E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EE10EC524EE51B50049E79E /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 		4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoCell.swift; sourceTree = "<group>"; };
 		4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotsController.swift; sourceTree = "<group>"; };
 		4EB1C4CA24F1200C00C51A65 /* PreScreenshotMainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreScreenshotMainCell.swift; sourceTree = "<group>"; };
+		4EDFA31724F2B3F100EEB991 /* ReviewsDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsDetailController.swift; sourceTree = "<group>"; };
+		4EDFA31924F2B47C00EEB991 /* ReviewListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewListCell.swift; sourceTree = "<group>"; };
+		4EDFA31B24F2B64D00EEB991 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		4EE10EB924EE51B30049E79E /* Appstore_Jeeeun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appstore_Jeeeun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EE10EBC24EE51B30049E79E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EE10EC324EE51B30049E79E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */,
 				4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */,
 				4EB1C4CA24F1200C00C51A65 /* PreScreenshotMainCell.swift */,
+				4EDFA31724F2B3F100EEB991 /* ReviewsDetailController.swift */,
+				4EDFA31924F2B47C00EEB991 /* ReviewListCell.swift */,
+				4EDFA31B24F2B64D00EEB991 /* ReviewCell.swift */,
 			);
 			path = AppDetailTableGroup;
 			sourceTree = "<group>";
@@ -308,16 +317,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EB1C4C124F0FC9600C51A65 /* SelectedAppController.swift in Sources */,
+				4EDFA31A24F2B47C00EEB991 /* ReviewListCell.swift in Sources */,
 				4EB1C4C324F0FF2C00C51A65 /* Reviews.swift in Sources */,
 				4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */,
 				4E707DE724F0C7C3004F52B9 /* RecommendedWordCell.swift in Sources */,
 				4EB1C4BE24F0F3C300C51A65 /* Ex+UIImageView.swift in Sources */,
+				4EDFA31824F2B3F100EEB991 /* ReviewsDetailController.swift in Sources */,
 				4EE10EEB24EE7CBA0049E79E /* SearchResult.swift in Sources */,
 				4EE10EDE24EE5AD50049E79E /* SearchViewController.swift in Sources */,
 				4EB1C4BB24F0E05100C51A65 /* SearchResultCell.swift in Sources */,
 				4EB1C4C524F107AE00C51A65 /* DetailInfoCell.swift in Sources */,
 				4EB1C4C924F117A600C51A65 /* ScreenshotsController.swift in Sources */,
 				4E19CAEC24EF7B63004E0AB5 /* WordTextViewCell.swift in Sources */,
+				4EDFA31C24F2B64D00EEB991 /* ReviewCell.swift in Sources */,
 				4EE10EEE24EE819D0049E79E /* UIView+Layout.swift in Sources */,
 				4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */,
 				4EE10ED224EE52950049E79E /* MainTabController.swift in Sources */,

@@ -90,7 +90,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        
+         showRecentWord = true
         sortedSearchList = searchList.filter({$0.lowercased().contains(searchText.lowercased())})
         print("\(sortedSearchList)")
         DispatchQueue.main.async {

@@ -49,21 +49,21 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
                 self.collectionView.reloadData()
             }
         }
-        
-        //        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
-        //         FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: (reviews: Reviews?, err) in
-        //
-        //               if let err = err {
-        //                   print("Failed to decode reviews:", err)
-        //                   return
-        //               }
-        //
-        //               self.reviews = reviews
-        //               DispatchQueue.main.async {
-        //                   self.collectionView.reloadData()
-        //               }
-        //
-        //           }
+//        
+//                let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
+//                 FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: (reviews: Reviews?, err) in
+//        
+//                       if let err = err {
+//                           print("Failed to decode reviews:", err)
+//                           return
+//                       }
+//        
+//                       self.reviews = reviews
+//                       DispatchQueue.main.async {
+//                           self.collectionView.reloadData()
+//                       }
+//        
+//                   }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,6 +79,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
             //profilecell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "detailInfoCell", for: indexPath) as! DetailInfoCell
             cell.detailInfo = detailInfo
+            cell.openAppBtn.layer.cornerRadius = 16
             return cell
         }
         else {

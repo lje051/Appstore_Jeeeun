@@ -28,29 +28,14 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
         }
     }
     
-    class ScreenshotCell: UICollectionViewCell {
-        
-        let imageView = UIImageView()
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-           imageView.layer.cornerRadius = 12
-            imageView.backgroundColor = .purple
-            addSubview(imageView)
-            imageView.fillSuperview()
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            fatalError()
-        }
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
          
         collectionView.backgroundColor = .white
         collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
+        collectionView.contentInset = .init(top: 10, left: 16, bottom: 0, right: 16)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -72,3 +57,21 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     }
     
 }
+class ScreenshotCell: UICollectionViewCell {
+       
+       let imageView = UIImageView()
+       
+       override init(frame: CGRect) {
+           super.init(frame: frame)
+        //  imageView.layer.cornerRadius = 12
+           imageView.backgroundColor = .clear
+           addSubview(imageView)
+           imageView.fillSuperview()
+           imageView.contentMode = .scaleToFill
+            imageView.stylingImv()
+       }
+       
+       required init?(coder aDecoder: NSCoder) {
+           fatalError()
+       }
+   }

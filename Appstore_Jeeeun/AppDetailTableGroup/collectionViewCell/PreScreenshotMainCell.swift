@@ -15,7 +15,6 @@ class PreScreenshotMainCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         addSubview(horizontalController.view)
-    
         horizontalController.view.backgroundColor = .yellow
         horizontalController.view.anchor(top: previewLabel.bottomAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 0))
     }

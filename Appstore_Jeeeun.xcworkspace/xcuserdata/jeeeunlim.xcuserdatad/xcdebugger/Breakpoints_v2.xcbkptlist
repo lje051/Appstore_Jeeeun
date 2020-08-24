@@ -71,157 +71,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "096B1C43-CA67-491E-B8D8-17A3E3894CB8"
+            uuid = "11FF3C57-8EA3-458A-A9BA-680A3198CC19"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
+            filePath = "Appstore_Jeeeun/Controller/SelectedAppController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "findDigitNum(num:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "fetchData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "90239566-FC1A-43FA-A8D4-273155B5D709"
+            uuid = "069492EA-04FC-400F-98D6-270CE01DE8A9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
+            filePath = "Appstore_Jeeeun/FetchData/FetchData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "bigNumberName(place:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "fetchJSONData(urlString:completion:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "90239566-FC1A-43FA-A8D4-273155B5D709 - 81a202eb413fa23d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appstore_Jeeeun.SearchResultCell.bigNumberName(place: Swift.Int) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Appstore_Jeeeun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jeeeunlim/Desktop/Appstore_Jeeeun/Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "90239566-FC1A-43FA-A8D4-273155B5D709 - 81a202eb413fa23d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appstore_Jeeeun.SearchResultCell.bigNumberName(place: Swift.Int) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Appstore_Jeeeun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jeeeunlim/Desktop/Appstore_Jeeeun/Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "144">
-               </Location>
-               <Location
-                  uuid = "90239566-FC1A-43FA-A8D4-273155B5D709 - 81a202eb413fa23d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appstore_Jeeeun.SearchResultCell.bigNumberName(place: Swift.Int) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Appstore_Jeeeun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jeeeunlim/Desktop/Appstore_Jeeeun/Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  uuid = "90239566-FC1A-43FA-A8D4-273155B5D709 - 81a202eb413fa23d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appstore_Jeeeun.SearchResultCell.bigNumberName(place: Swift.Int) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Appstore_Jeeeun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jeeeunlim/Desktop/Appstore_Jeeeun/Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "220">
-               </Location>
-               <Location
-                  uuid = "90239566-FC1A-43FA-A8D4-273155B5D709 - 81a202eb413fa23d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appstore_Jeeeun.SearchResultCell.bigNumberName(place: Swift.Int) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Appstore_Jeeeun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jeeeunlim/Desktop/Appstore_Jeeeun/Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "272">
-               </Location>
-               <Location
-                  uuid = "90239566-FC1A-43FA-A8D4-273155B5D709 - 81a202eb413fa23d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Appstore_Jeeeun.SearchResultCell.bigNumberName(place: Swift.Int) -&gt; Swift.Optional&lt;Swift.String&gt;"
-                  moduleName = "Appstore_Jeeeun"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/jeeeunlim/Desktop/Appstore_Jeeeun/Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "105"
-                  endingLineNumber = "105"
-                  offsetFromSymbolStart = "324">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "38C8ED51-1648-4EE4-B69D-243B43FFF861"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "appResult"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4CE0FA2D-A755-4BDF-8837-0D3EB2799D4C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Appstore_Jeeeun/SearchTableGroup/SearchResultCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "appResult"
-            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

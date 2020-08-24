@@ -10,6 +10,7 @@
 		23F98B4B6C7437908966519E /* Pods_Appstore_Jeeeun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF548AAB7C96FB27D795243E /* Pods_Appstore_Jeeeun.framework */; };
 		4E19CAEA24EF77DC004E0AB5 /* WordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19CAE924EF77DC004E0AB5 /* WordTableViewController.swift */; };
 		4E19CAEC24EF7B63004E0AB5 /* WordTextViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19CAEB24EF7B63004E0AB5 /* WordTextViewCell.swift */; };
+		4E299A2F24F3B48800104524 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E299A2E24F3B48800104524 /* AboutCell.swift */; };
 		4E707DE724F0C7C3004F52B9 /* RecommendedWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E707DE624F0C7C3004F52B9 /* RecommendedWordCell.swift */; };
 		4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */; };
 		4EA5420124EEA2B500EDB4A1 /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		4E19CAE924EF77DC004E0AB5 /* WordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTableViewController.swift; sourceTree = "<group>"; };
 		4E19CAEB24EF7B63004E0AB5 /* WordTextViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTextViewCell.swift; sourceTree = "<group>"; };
+		4E299A2E24F3B48800104524 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		4E707DE624F0C7C3004F52B9 /* RecommendedWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedWordCell.swift; sourceTree = "<group>"; };
 		4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchCell.swift; sourceTree = "<group>"; };
@@ -78,6 +80,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E299A3024F3B4A700104524 /* collectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */,
+				4EB1C4CA24F1200C00C51A65 /* PreScreenshotMainCell.swift */,
+				4EDFA31924F2B47C00EEB991 /* ReviewListCell.swift */,
+				4E299A2E24F3B48800104524 /* AboutCell.swift */,
+			);
+			path = collectionViewCell;
+			sourceTree = "<group>";
+		};
+		4E299A3124F3B4B500104524 /* cellController */ = {
+			isa = PBXGroup;
+			children = (
+				4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */,
+				4EDFA31724F2B3F100EEB991 /* ReviewsDetailController.swift */,
+			);
+			path = cellController;
+			sourceTree = "<group>";
+		};
 		4EB1C4BC24F0E42F00C51A65 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +113,8 @@
 		4EB1C4BF24F0FC6700C51A65 /* AppDetailTableGroup */ = {
 			isa = PBXGroup;
 			children = (
-				4EB1C4C424F107AE00C51A65 /* DetailInfoCell.swift */,
-				4EB1C4C824F117A600C51A65 /* ScreenshotsController.swift */,
-				4EB1C4CA24F1200C00C51A65 /* PreScreenshotMainCell.swift */,
-				4EDFA31724F2B3F100EEB991 /* ReviewsDetailController.swift */,
-				4EDFA31924F2B47C00EEB991 /* ReviewListCell.swift */,
+				4E299A3124F3B4B500104524 /* cellController */,
+				4E299A3024F3B4A700104524 /* collectionViewCell */,
 				4EDFA31B24F2B64D00EEB991 /* ReviewCell.swift */,
 			);
 			path = AppDetailTableGroup;
@@ -325,6 +344,7 @@
 				4EE10EEE24EE819D0049E79E /* UIView+Layout.swift in Sources */,
 				4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */,
 				4EE10ED224EE52950049E79E /* MainTabController.swift in Sources */,
+				4E299A2F24F3B48800104524 /* AboutCell.swift in Sources */,
 				4EE10EE824EE7C6C0049E79E /* FetchData.swift in Sources */,
 				4E19CAEA24EF77DC004E0AB5 /* WordTableViewController.swift in Sources */,
 				4EB1C4CB24F1200C00C51A65 /* PreScreenshotMainCell.swift in Sources */,

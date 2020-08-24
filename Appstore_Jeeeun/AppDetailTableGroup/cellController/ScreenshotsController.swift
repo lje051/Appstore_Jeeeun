@@ -10,7 +10,7 @@ import UIKit
 
 
 class ScreenshotsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-  
+    
     let cellId = "cellId"
     
     var detailInfo: Result? {
@@ -20,15 +20,15 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     }
     
     init() {
-            let layout = UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            super.init(collectionViewLayout: layout)
-            collectionView.decelerationRate = .fast
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        super.init(collectionViewLayout: layout)
+        collectionView.decelerationRate = .fast
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

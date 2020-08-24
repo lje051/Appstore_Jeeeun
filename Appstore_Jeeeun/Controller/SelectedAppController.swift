@@ -61,7 +61,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 3
+        return 4
         
         
     }
@@ -77,13 +77,16 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         }
         else  if indexPath.item == 1 {
             //horizontalController
-            let layout =  UICollectionViewFlowLayout()
-            layout.scrollDirection = .horizontal
-            
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
             cell.horizontalController.detailInfo = self.detailInfo
             
+            return cell
+        }else  if indexPath.item == 2 {
+            //horizontalController
+          
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aboutCell", for: indexPath) as! AboutCell
+             cell.detailInfo = detailInfo
             return cell
         }
         else {
@@ -96,15 +99,15 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var height: CGFloat = 500
+        var height: CGFloat = 530
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
                 if indexPath.item == 0 {
                     height = view.frame.height
                 }
-        //else if indexPath.item == 1 {
-        //                   height = 500
-        //               }
+        else if indexPath.item == 1 {
+                           height = 550
+                       }
         
         
         return .init(width: screenWidth - 15, height: height)

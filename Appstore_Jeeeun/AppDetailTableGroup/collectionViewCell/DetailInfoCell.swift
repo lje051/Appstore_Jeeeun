@@ -16,7 +16,7 @@ class DetailInfoCell: UICollectionViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var moreBtn: UIButton!
-    @IBOutlet weak var whatsNewBtn: UIButton!
+  //  @IBOutlet weak var whatsNewBtn: UIButton!
  
     @IBOutlet weak var whatsNewLabel: UILabel!
     static let identifier = "detailInfoCell"
@@ -31,7 +31,7 @@ class DetailInfoCell: UICollectionViewCell {
           //  if whatsNewLabel.numberOfLines > 3 {
                //  whatsNewBtn.alpha = 1
          //   }else{
-             whatsNewBtn.alpha = 0
+           //  whatsNewBtn.alpha = 0
          //   }
            
             if  let artworkUrl100 = URL(string: detailInfo.artworkUrl100){
@@ -43,13 +43,13 @@ class DetailInfoCell: UICollectionViewCell {
         }
     }
     
-    @IBAction func renderMoreWhatsNew(_ sender: Any) {
-        whatsNewLabel.numberOfLines = 0
-        whatsNewBtn.alpha = 0
-        UIView.animate(withDuration: 0.5) {
-            self.contentView.layoutIfNeeded()
-        }
-    }
+//    @IBAction func renderMoreWhatsNew(_ sender: Any) {
+//        whatsNewLabel.numberOfLines = 0
+//     //   whatsNewBtn.alpha = 0
+//        UIView.animate(withDuration: 0.5) {
+//            self.contentView.layoutIfNeeded()
+//        }
+//    }
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layoutIfNeeded()

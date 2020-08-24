@@ -11,7 +11,7 @@ import UIKit
 
 class ScreenshotsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let cellId = "cellId"
+    let cellId = "screenshotCell"
     
     var detailInfo: Result? {
         didSet {
@@ -52,7 +52,7 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 250, height: view.frame.height)
+        return .init(width: 250, height: 500)
     }
     
 }

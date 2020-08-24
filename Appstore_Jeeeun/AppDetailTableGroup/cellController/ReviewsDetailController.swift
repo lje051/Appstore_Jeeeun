@@ -23,6 +23,8 @@ class ReviewsDetailController: UICollectionViewController, UICollectionViewDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         collectionView.backgroundColor = .white
         collectionView.contentInset = .init(top: 0, left: 16, bottom: 0, right: 16)
     }
@@ -33,23 +35,26 @@ class ReviewsDetailController: UICollectionViewController, UICollectionViewDeleg
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewCell.identifier, for: indexPath) as! ReviewCell
-        
+       cell.layer.cornerRadius = 16
         let entry = self.reviews?.feed.entry[indexPath.item]
-//        cell.titleLabel.text = entry?.title.label
-//        cell.authorLabel.text = entry?.author.name.label
-//        cell.bodyLabel.text = entry?.content.label
-        
-//        for (index, view) in cell.starsStackView.arrangedSubviews.enumerated() {
-//            if let ratingInt = Int(entry!.rating.label) {
-//                view.alpha = index >= ratingInt ? 0 : 1
-//            }
-//        }
+        cell.titleLabel.text = entry?.title.label
+        cell.writerLabel.text = entry?.author.name.label
+        cell.contentLabel.text = entry?.content.label
+        if let rating = Int(entry!.rating.label) {
+              cell.setAppstoreStar(rating:rating)
+        }
+      
+      
         
         return cell
     }
-    
+   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 48, height: view.frame.height)
+        let screenSize = UIScreen.main.bounds
+             let screenWidth = screenSize.width
+        
+       // return .init(width: screenWidth - 15, height: 250)
+       return  CGSize(width: screenWidth - 30, height:220)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

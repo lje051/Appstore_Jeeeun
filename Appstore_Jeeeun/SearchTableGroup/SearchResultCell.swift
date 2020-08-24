@@ -23,7 +23,7 @@ class SearchResultCell: UITableViewCell {
     @IBOutlet weak var star3Imv: UIImageView!
     @IBOutlet weak var star4Imv: UIImageView!
     @IBOutlet weak var star5Imv: UIImageView!
-    var maximumRating = 5
+ 
     var digits: [Int] = []
     var offImage = UIImage(named: "emptySrar")
     var halfImage = UIImage(named: "halfFilledSrar")
@@ -35,6 +35,7 @@ class SearchResultCell: UITableViewCell {
             appNameLabel.text = appResult.trackName
             descLabel.text = appResult.primaryGenreName
             setAppstoreStar()
+            setScreenshotImv()
             guard let downloadNum = appResult.userRatingCountForCurrentVersion else { return }
             digits.removeAll()
             
@@ -94,23 +95,27 @@ class SearchResultCell: UITableViewCell {
         star4Imv.image = getStarImage(for: floatValue, compareNum: 4.0)
         star5Imv.image = getStarImage(for: floatValue, compareNum: 5.0)
         
+       
+    }
+    
+    func setScreenshotImv() {
         if let url = URL(string: appResult.artworkUrl100) {
-            appIconImv.downloaded(from: url)
-        }
-        
-        if let url1 = URL(string: appResult.screenshotUrls?[0] ?? ""){
-            screenshot1Imv.downloaded(from:url1)
-        }
-        if appResult.screenshotUrls!.count > 1 {
-            if  let url2 = URL(string: appResult.screenshotUrls?[1] ?? ""){
-                screenshot2Imv.downloaded(from:url2)
-            }
-        }
-        if appResult.screenshotUrls!.count > 2 {
-            if  let url3 = URL(string: appResult.screenshotUrls?[2] ?? ""){
-                screenshot3Imv.downloaded(from:url3)
-            }
-        }
+                   appIconImv.downloaded(from: url)
+               }
+               
+               if let url1 = URL(string: appResult.screenshotUrls?[0] ?? ""){
+                   screenshot1Imv.downloaded(from:url1)
+               }
+               if appResult.screenshotUrls!.count > 1 {
+                   if  let url2 = URL(string: appResult.screenshotUrls?[1] ?? ""){
+                       screenshot2Imv.downloaded(from:url2)
+                   }
+               }
+               if appResult.screenshotUrls!.count > 2 {
+                   if  let url3 = URL(string: appResult.screenshotUrls?[2] ?? ""){
+                       screenshot3Imv.downloaded(from:url3)
+                   }
+               }
     }
     
     func bigNumberName (place: Int) -> String? {

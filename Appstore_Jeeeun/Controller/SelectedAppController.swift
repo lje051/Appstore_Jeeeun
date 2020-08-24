@@ -19,6 +19,8 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         navigationItem.largeTitleDisplayMode = .never
         self.title = ""
         fetchData()
@@ -71,22 +73,25 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         if indexPath.item == 0 {
             //profilecell
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailInfoCell.identifier, for: indexPath) as! DetailInfoCell
-            cell.detailInfo = detailInfo
+            if self.detailInfo != nil{
+                cell.detailInfo = detailInfo
+            }
+            
             cell.openAppBtn.layer.cornerRadius = 16
             return cell
         }
         else  if indexPath.item == 1 {
             //horizontalController
-           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
             cell.horizontalController.detailInfo = self.detailInfo
             
             return cell
         }else  if indexPath.item == 2 {
             //horizontalController
-          
+            
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aboutCell", for: indexPath) as! AboutCell
-             cell.detailInfo = detailInfo
+            cell.detailInfo = detailInfo
             return cell
         }
         else {
@@ -99,29 +104,19 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var height: CGFloat = 530
+        var height: CGFloat = 280
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-                if indexPath.item == 0 {
-                    height = view.frame.height
-                }
-        else if indexPath.item == 1 {
-                           height = 550
-                       }
         
+        if indexPath.item == 1 {
+            height = 600
+        }else if indexPath.item == 2 {
+            height = 200
+        }
         
-        return .init(width: screenWidth - 15, height: height)
+        return  CGSize(width: screenWidth - 30, height:height)
+        
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 0, bottom: 16, right: 0)
-    }
-    
-    
-    // MARK: UICollectionViewDataSource
-    
-    
-    
-    
+   
     
 }

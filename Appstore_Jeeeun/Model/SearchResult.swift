@@ -26,6 +26,7 @@ struct Result: Decodable {
     var releaseNotes: String?
     var artistName: String?
     var collectionName: String?
+    var userRatingCountForCurrentVersion: Int?
 }
 
 

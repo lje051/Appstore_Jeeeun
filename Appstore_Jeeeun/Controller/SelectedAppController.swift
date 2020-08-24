@@ -14,7 +14,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     var detailInfo: Result? 
     var reviews: Reviews?
     var appId:String?
-
+    
     var isReady = false
     
     override func viewDidLoad() {
@@ -22,12 +22,6 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         navigationItem.largeTitleDisplayMode = .never
         self.title = ""
         fetchData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Register cell classe
-        
-        // Do any additional setup after loading the view.
     }
     
     
@@ -48,21 +42,21 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
             }
         }
         
-    let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
-                FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: Reviews?, err) in
-        
-                       if let err = err {
-                           print("Failed to decode reviews:", err)
-                           return
-                       }
-    
-                    self.reviews = result
-                    print("\(self.reviews)")
-                       DispatchQueue.main.async {
-                           self.collectionView.reloadData()
-                       }
-        
-                   }
+        let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
+        FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: Reviews?, err) in
+            
+            if let err = err {
+                print("Failed to decode reviews:", err)
+                return
+            }
+            
+            self.reviews = result
+            print("\(self.reviews)")
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -85,19 +79,19 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
             //horizontalController
             let layout =  UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
-        
-
+            
+            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
             cell.horizontalController.detailInfo = self.detailInfo
             
             return cell
         }
         else {
-      //  평가및 리뷰
+            //  평가및 리뷰
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewListCell.identifier, for: indexPath) as! ReviewListCell
-                       cell.reviewsController.reviews = self.reviews
-                       return cell
-           }
+            cell.reviewsController.reviews = self.reviews
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -105,22 +99,13 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         var height: CGFloat = 500
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
-        if indexPath.item == 0 {
-            //                           // calculate the necessary size for our cell somehow
-            //                           let dummyCell = AppDetailCell(frame: .init(x: 0, y: 0, width: view.frame.width, height: 1000))
-            //                           dummyCell.app = app
-            //                           dummyCell.layoutIfNeeded()
-            //
-            //                           let estimatedSize = dummyCell.systemLayoutSizeFitting(.init(width: view.frame.width, height: 1000))
-            //                           height = estimatedSize.height
-        } else if indexPath.item == 1 {
-                   height = 500
-               } 
-        //        else if indexPath.item == 1 {
-        //            height = 500
-        //        } else {
-        //            height = 280
-        //        }
+                if indexPath.item == 0 {
+                    height = view.frame.height
+                }
+        //else if indexPath.item == 1 {
+        //                   height = 500
+        //               }
+        
         
         return .init(width: screenWidth - 15, height: height)
     }

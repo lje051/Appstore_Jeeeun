@@ -124,7 +124,6 @@
 			children = (
 				4EB1C4BF24F0FC6700C51A65 /* AppDetailTableGroup */,
 				4EB1C4BC24F0E42F00C51A65 /* Extension */,
-				4EE10EEC24EE81870049E79E /* Helper */,
 				4EE10EE924EE7CAB0049E79E /* Model */,
 				4EE10EE624EE7C410049E79E /* FetchData */,
 				4EE10EE124EE74660049E79E /* SearchTableGroup */,
@@ -175,13 +174,6 @@
 				4EB1C4C224F0FF2C00C51A65 /* Reviews.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		4EE10EEC24EE81870049E79E /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		97FBE50CC37BEDC1EDEDB0CB /* Frameworks */ = {

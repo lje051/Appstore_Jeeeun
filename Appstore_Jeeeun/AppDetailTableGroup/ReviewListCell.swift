@@ -12,9 +12,10 @@ class ReviewListCell: UICollectionViewCell {
  
      static let identifier = "reviewListCell"
     @IBOutlet weak var reviewTitleLabel: UILabel!
-    let reviewsController = ReviewsDetailController()
         
       
+    var reviewsController: ReviewsDetailController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ReviewsDetailController.reuseIdentifier) as! ReviewsDetailController
+
     
    
     override func awakeFromNib() {

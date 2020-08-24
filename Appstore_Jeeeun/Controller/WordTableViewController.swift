@@ -26,26 +26,23 @@ class WordTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
-    // MARK: - Table view data source
+    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: WordTextViewCell.identifier, for: indexPath) as! WordTextViewCell
-        // set the text from the data model
         cell.wordTextLabel.text = self.searchList[indexPath.row]
         return cell
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         
-        return self.searchList.count
+       return self.searchList.count
     }
 
   
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-          
-                            return 44
+         return 44
     }
 
 

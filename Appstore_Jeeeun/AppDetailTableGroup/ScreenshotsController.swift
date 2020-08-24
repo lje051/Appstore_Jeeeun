@@ -10,16 +10,7 @@ import UIKit
 
 
 class ScreenshotsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    init() {
-          let layout = UICollectionViewFlowLayout()
-          layout.scrollDirection = .horizontal
-          super.init(collectionViewLayout: layout)
-          collectionView.decelerationRate = .fast
-      }
-      
-      required init?(coder aDecoder: NSCoder) {
-          fatalError("init(coder:) has not been implemented")
-      }
+  
     let cellId = "cellId"
     
     var detailInfo: Result? {
@@ -28,11 +19,19 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
         }
     }
     
-   
+    init() {
+            let layout = UICollectionViewFlowLayout()
+            layout.scrollDirection = .horizontal
+            super.init(collectionViewLayout: layout)
+            collectionView.decelerationRate = .fast
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         
         collectionView.backgroundColor = .white
         collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 0, right: 16)
@@ -46,9 +45,9 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenshotCell
         let screenshotUrl = self.detailInfo?.screenshotUrls![indexPath.item]
         if let url = URL(string: screenshotUrl ?? "")  {
-             cell.imageView.downloaded(from:url)
+            cell.imageView.downloaded(from:url)
         }
-       
+        
         return cell
     }
     
@@ -58,20 +57,20 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     
 }
 class ScreenshotCell: UICollectionViewCell {
-       
-       let imageView = UIImageView()
-       
-       override init(frame: CGRect) {
-           super.init(frame: frame)
+    
+    let imageView = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         //  imageView.layer.cornerRadius = 12
-           imageView.backgroundColor = .clear
-           addSubview(imageView)
-           imageView.fillSuperview()
-           imageView.contentMode = .scaleToFill
-            imageView.stylingImv()
-       }
-       
-       required init?(coder aDecoder: NSCoder) {
-           fatalError()
-       }
-   }
+        imageView.backgroundColor = .clear
+        addSubview(imageView)
+        imageView.fillSuperview()
+        imageView.contentMode = .scaleToFill
+        imageView.stylingImv()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
+    }
+}

@@ -10,9 +10,7 @@ import UIKit
 
 class DetailInfoCell: UICollectionViewCell {
     @IBOutlet weak var appIconImv: UIImageView!
-    
     @IBOutlet weak var appNameLabel: UILabel!
-    
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var openAppBtn: UIButton!
     @IBOutlet weak var releaseDateLabel: UILabel!
@@ -39,9 +37,8 @@ class DetailInfoCell: UICollectionViewCell {
     
     @IBAction func renderMoreWhatsNew(_ sender: Any) {
         whatsNewLabel.numberOfLines = 0
-     
-         self.contentView.layoutIfNeeded()
-           self.contentView.layoutSubviews()
+        self.contentView.layoutIfNeeded()
+        self.contentView.layoutSubviews()
         
     }
     

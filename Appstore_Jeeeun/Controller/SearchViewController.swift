@@ -9,14 +9,8 @@ import SwiftyUserDefaults
 import UIKit
 
 class SearchViewController: UITableViewController, UISearchBarDelegate  {
-    
-    enum TableCell: Int {
-        case wordCell = 0
-        case empty
-        
-    }
-    
-    //
+
+
     fileprivate var searchResults = [Result]()
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     fileprivate let cellId = "searchView"
@@ -46,20 +40,15 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         if Defaults[\.searchList].count > 0 {
             searchList = Defaults[\.searchList]
         }
-        
-        
+    
         tableView.separatorStyle = .none
         tableView.register(RecentSearchCell.self, forCellReuseIdentifier: RecentSearchCell.identifier)
         tableView.reloadData()
-        
         tableView.register(RecommendedWordCell.self, forCellReuseIdentifier: RecommendedWordCell.identifier)
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-        
-    }
+ 
     fileprivate func setupSearchBar() {
         definesPresentationContext = true
         self.navigationItem.searchController = self.searchController
@@ -67,14 +56,9 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         self.searchController.dimsBackgroundDuringPresentation = false
         self.searchController.searchBar.delegate = self
     }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        return .init(width: view.frame.width, height: 350)
-    //    }
-    
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // self.tableView.isHidden = true
-        
+   
         showRecentWord = true
         
         
@@ -83,6 +67,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         showRecentWord = false
+        showResultPage = false
+   
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -109,14 +95,11 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         }
         
         print( "\(Defaults[\.searchList]) listlist")
-        // introduce some delay before performing the search
-        // throttling the search
-        
+  
         timer?.invalidate()
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             
-            // this will actually fire my search
             FetchData.shared.fetchApps(searchTerm: searchText) { (res, err) in
                 if let err = err {
                     print("Failed to fetch apps:", err)
@@ -131,8 +114,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
-                //                         self.collectionView.reloadData()
-                //                     }
             }
             
         })
@@ -142,9 +123,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         if showResultPage{
             let appId = String(searchResults[indexPath.row].trackId)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            
             let selectedAppController = storyboard.instantiateViewController(withIdentifier: "selectedAppController") as! SelectedAppController
-            
             selectedAppController.appId = appId
             self.navigationController?.pushViewController(selectedAppController, animated: true)
             
@@ -154,24 +133,24 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if showRecentWord {
             let cell = tableView.dequeueReusableCell(withIdentifier: RecommendedWordCell.identifier, for: indexPath) as! RecommendedWordCell
+            cell.selectionStyle = .none
             cell.recommendTextLabel.text = self.sortedSearchList[indexPath.row]
-            
             return cell
+            
         }else if showResultPage{
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
             cell.appResult = searchResults[indexPath.row]
+            cell.selectionStyle = .none
             return cell
         }
         else{
-            // if indexPath.row == TableCell.wordCell.rawValue {
+
             let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchCell.identifier, for: indexPath) as! RecentSearchCell
             
             cell.wordTableViewController.searchList = Defaults[\.searchList]
             cell.wordTableViewController.tableView.reloadData()
-            // set the text from the data model
-            
             return cell
-            //    }
+  
         }
         
     }
@@ -194,9 +173,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         }else if showResultPage{
             return 330
         }else{
-            //  if indexPath.row == TableCell.wordCell.rawValue {
+    
             return CGFloat(Defaults[\.searchList].count * 44 + 90)
-            //  }
         }
         
     }

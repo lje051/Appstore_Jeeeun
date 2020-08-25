@@ -40,12 +40,12 @@ class SearchResultCell: UITableViewCell {
             digits.removeAll()
             
             let digitInt = findDigitNum(num: downloadNum)
-            print("bigName\(digitInt)")
+           
             if let bigNumberName = bigNumberName(place: digitInt){
                 //천단위보다 높은경우 한단계 전 숫자까지 노출, 0은 제외
                 let endNum = String(digits [digitInt - 1])
                 let secondEndNum = String(digits [digitInt - 2])
-                print("\(endNum).\(secondEndNum)\(bigNumberName)")
+             
                 if secondEndNum != "0"{
                     downloadNumLabel.text = "\(endNum).\(secondEndNum)\(bigNumberName)"
                 }

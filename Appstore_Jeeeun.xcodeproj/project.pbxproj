@@ -14,6 +14,7 @@
 		4E707DE724F0C7C3004F52B9 /* RecommendedWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E707DE624F0C7C3004F52B9 /* RecommendedWordCell.swift */; };
 		4EA541FF24EE999F00EDB4A1 /* DefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */; };
 		4EA5420124EEA2B500EDB4A1 /* RecentSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */; };
+		4EAD03B724F4B9D6007B9F81 /* Ex+Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAD03B624F4B9D6007B9F81 /* Ex+Time.swift */; };
 		4EB1C4BB24F0E05100C51A65 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4BA24F0E05100C51A65 /* SearchResultCell.swift */; };
 		4EB1C4BE24F0F3C300C51A65 /* Ex+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4BD24F0F3C300C51A65 /* Ex+UIImageView.swift */; };
 		4EB1C4C124F0FC9600C51A65 /* SelectedAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB1C4C024F0FC9600C51A65 /* SelectedAppController.swift */; };
@@ -42,6 +43,7 @@
 		4E707DE624F0C7C3004F52B9 /* RecommendedWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedWordCell.swift; sourceTree = "<group>"; };
 		4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsKeys.swift; sourceTree = "<group>"; };
 		4EA5420024EEA2B500EDB4A1 /* RecentSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentSearchCell.swift; sourceTree = "<group>"; };
+		4EAD03B624F4B9D6007B9F81 /* Ex+Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Time.swift"; sourceTree = "<group>"; };
 		4EB1C4BA24F0E05100C51A65 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		4EB1C4BD24F0F3C300C51A65 /* Ex+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIImageView.swift"; sourceTree = "<group>"; };
 		4EB1C4C024F0FC9600C51A65 /* SelectedAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAppController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				4EE10EED24EE819D0049E79E /* UIView+Layout.swift */,
 				4EA541FE24EE999F00EDB4A1 /* DefaultsKeys.swift */,
 				4EB1C4BD24F0F3C300C51A65 /* Ex+UIImageView.swift */,
+				4EAD03B624F4B9D6007B9F81 /* Ex+Time.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */,
 				4EE10ED224EE52950049E79E /* MainTabController.swift in Sources */,
 				4E299A2F24F3B48800104524 /* AboutCell.swift in Sources */,
+				4EAD03B724F4B9D6007B9F81 /* Ex+Time.swift in Sources */,
 				4EE10EE824EE7C6C0049E79E /* FetchData.swift in Sources */,
 				4E19CAEA24EF77DC004E0AB5 /* WordTableViewController.swift in Sources */,
 				4EB1C4CB24F1200C00C51A65 /* PreScreenshotMainCell.swift in Sources */,

@@ -62,8 +62,12 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return 4
+        if self.reviews != nil {
+             return 4
+        }else{
+            return 3
+        }
+       
         
         
     }

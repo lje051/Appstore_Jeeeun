@@ -16,8 +16,8 @@ class DetailInfoCell: UICollectionViewCell {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
     @IBOutlet weak var moreBtn: UIButton!
-  //  @IBOutlet weak var whatsNewBtn: UIButton!
- 
+    //  @IBOutlet weak var whatsNewBtn: UIButton!
+    
     @IBOutlet weak var whatsNewLabel: UILabel!
     static let identifier = "detailInfoCell"
     var detailInfo: Result! {
@@ -28,28 +28,23 @@ class DetailInfoCell: UICollectionViewCell {
             versionLabel.text = "버전 \(detailInfo.version)"
             guard let releaseNotes = detailInfo.releaseNotes else { return }
             whatsNewLabel.text = releaseNotes
-          //  if whatsNewLabel.numberOfLines > 3 {
-               //  whatsNewBtn.alpha = 1
-         //   }else{
-           //  whatsNewBtn.alpha = 0
-         //   }
-           
+            guard let releaseDate = detailInfo.currentVersionReleaseDate else { return }
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "ko_KR")// set locale to reliable US_POSIX
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            let date = dateFormatter.date(from: releaseDate)!
+            //   print("timeAgoDisplay\(date.timeAgoDisplay())")
+            releaseDateLabel.text = date.timeAgoDisplay()
             if  let artworkUrl100 = URL(string: detailInfo.artworkUrl100){
                 appIconImv.stylingImv()
                 appIconImv.downloaded(from:artworkUrl100)
             }
-            
             moreBtn.setTitle(detailInfo.formattedPrice, for: .normal)
         }
     }
     
-//    @IBAction func renderMoreWhatsNew(_ sender: Any) {
-//        whatsNewLabel.numberOfLines = 0
-//     //   whatsNewBtn.alpha = 0
-//        UIView.animate(withDuration: 0.5) {
-//            self.contentView.layoutIfNeeded()
-//        }
-//    }
+  
     override func layoutSubviews() {
         super.layoutSubviews()
         self.layoutIfNeeded()

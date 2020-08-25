@@ -54,7 +54,7 @@ class ReviewsDetailController: UICollectionViewController, UICollectionViewDeleg
              let screenWidth = screenSize.width
         
        // return .init(width: screenWidth - 15, height: 250)
-       return  CGSize(width: screenWidth - 30, height:220)
+       return  CGSize(width: screenWidth - 50, height:220)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

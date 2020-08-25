@@ -146,7 +146,6 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         else{
 
             let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchCell.identifier, for: indexPath) as! RecentSearchCell
-            
             cell.wordTableViewController.searchList = Defaults[\.searchList]
             cell.wordTableViewController.tableView.reloadData()
             return cell

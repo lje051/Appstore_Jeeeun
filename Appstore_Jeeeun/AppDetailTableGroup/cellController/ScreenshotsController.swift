@@ -11,7 +11,7 @@ import UIKit
 
 class ScreenshotsController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let cellId = "screenshotCell"
+  
     
     var detailInfo: Result? {
         didSet {
@@ -33,7 +33,7 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
-        collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(ScreenshotCell.self, forCellWithReuseIdentifier: ScreenshotCell.identifier)
         collectionView.contentInset = .init(top: 10, left: 16, bottom: 0, right: 16)
     }
     
@@ -42,7 +42,7 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ScreenshotCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScreenshotCell.identifier, for: indexPath) as! ScreenshotCell
         let screenshotUrl = self.detailInfo?.screenshotUrls![indexPath.item]
         if let url = URL(string: screenshotUrl ?? "")  {
             cell.imageView.downloaded(from:url)
@@ -57,7 +57,7 @@ class ScreenshotsController: UICollectionViewController, UICollectionViewDelegat
     
 }
 class ScreenshotCell: UICollectionViewCell {
-    
+    static let identifier = "screenshotCell"
     let imageView = UIImageView()
     
     override init(frame: CGRect) {

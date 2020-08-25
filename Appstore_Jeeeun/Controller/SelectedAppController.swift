@@ -53,7 +53,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
             }
             
             self.reviews = result
-            print("\(self.reviews)")
+            //   print("\(self.reviews)")
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
@@ -63,11 +63,11 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.reviews != nil {
-             return 4
+            return 4
         }else{
             return 3
         }
-       
+        
         
         
     }
@@ -86,7 +86,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
         }
         else  if indexPath.item == 1 {
             //horizontalController
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "prescreenshotMainCell", for: indexPath) as! PreScreenshotMainCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:PreScreenshotMainCell.identifier, for: indexPath) as! PreScreenshotMainCell
             cell.horizontalController.detailInfo = self.detailInfo
             
             return cell
@@ -94,7 +94,7 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
             //horizontalController
             
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aboutCell", for: indexPath) as! AboutCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutCell.identifier, for: indexPath) as! AboutCell
             cell.detailInfo = detailInfo
             return cell
         }
@@ -108,19 +108,34 @@ class SelectedAppController: UICollectionViewController, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        var height: CGFloat = 280
+        var height: CGFloat = 600
         let screenSize = UIScreen.main.bounds
         let screenWidth = screenSize.width
         
-        if indexPath.item == 1 {
-            height = 600
+        if indexPath.item == 0 {
+             if self.detailInfo != nil{
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailInfoCell.identifier, for: indexPath) as! DetailInfoCell
+                cell.whatsNewLabel.text = self.detailInfo?.releaseNotes
+                 cell.whatsNewLabel.sizeToFit()
+                 height = cell.whatsNewLabel.frame.height  + 200
+            }
+           
         }else if indexPath.item == 2 {
-            height = 200
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AboutCell.identifier, for: indexPath) as! AboutCell
+            if self.detailInfo != nil{
+                cell.aboutAppLabel.text =  self.detailInfo?.description
+                cell.aboutAppLabel.sizeToFit()
+                height = cell.aboutAppLabel.frame.height + 40
+            }
+            
+            
+        }else if indexPath.item == 3 {
+            height = 280
         }
         
         return  CGSize(width: screenWidth - 30, height:height)
         
     }
-   
+    
     
 }

@@ -11,6 +11,7 @@ import UIKit
 class PreScreenshotMainCell: UICollectionViewCell {
     @IBOutlet weak var previewLabel: UILabel!
     let horizontalController = ScreenshotsController()
+    static let identifier = "preScreenshotMainCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

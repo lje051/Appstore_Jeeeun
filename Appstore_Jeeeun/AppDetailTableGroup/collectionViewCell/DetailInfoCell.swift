@@ -20,6 +20,7 @@ class DetailInfoCell: UICollectionViewCell {
     
     @IBOutlet weak var whatsNewLabel: UILabel!
     static let identifier = "detailInfoCell"
+    
     var detailInfo: Result! {
         didSet {
             guard let detailInfo = detailInfo else { return }
@@ -34,7 +35,6 @@ class DetailInfoCell: UICollectionViewCell {
             dateFormatter.locale = Locale(identifier: "ko_KR")// set locale to reliable US_POSIX
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
             let date = dateFormatter.date(from: releaseDate)!
-            //   print("timeAgoDisplay\(date.timeAgoDisplay())")
             releaseDateLabel.text = date.timeAgoDisplay()
             if  let artworkUrl100 = URL(string: detailInfo.artworkUrl100){
                 appIconImv.stylingImv()
@@ -45,8 +45,5 @@ class DetailInfoCell: UICollectionViewCell {
     }
     
   
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.layoutIfNeeded()
-    }
+   
 }

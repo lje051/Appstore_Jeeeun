@@ -28,21 +28,21 @@ extension UIImageView {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
     }
- 
-        convenience init(cornerRadius: CGFloat) {
-            self.init(image: nil)
-            self.layer.cornerRadius = cornerRadius
-            self.clipsToBounds = true
-            self.contentMode = .scaleAspectFill
-        }
-      func stylingImv() {
-              self.layer.cornerRadius = 8
-                    self.clipsToBounds = true
-                    self.layer.borderWidth = 0.5
-                    self.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
-      
-          }
-   
-     
-
+    
+    convenience init(cornerRadius: CGFloat) {
+        self.init(image: nil)
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
+        self.contentMode = .scaleAspectFill
+    }
+    func stylingImv() {
+        self.layer.cornerRadius = 8
+        self.clipsToBounds = true
+        self.layer.borderWidth = 0.5
+        self.layer.borderColor = UIColor(white: 0.5, alpha: 0.5).cgColor
+        
+    }
+    
+    
+    
 }

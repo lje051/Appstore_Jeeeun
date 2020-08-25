@@ -9,6 +9,7 @@
 import UIKit
 
 class AboutCell: UICollectionViewCell {
+    static let identifier = "aboutCell"
     @IBOutlet weak var aboutAppLabel: UILabel!
     var detailInfo: Result! {
            didSet {

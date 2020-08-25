@@ -11,7 +11,7 @@ import UIKit
 
 class ReviewsDetailController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    static let reuseIdentifier = "ReviewsDetailController"
+    static let identifier = "ReviewsDetailController"
 
     
     var reviews: Reviews? {
@@ -35,7 +35,7 @@ class ReviewsDetailController: UICollectionViewController, UICollectionViewDeleg
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewCell.identifier, for: indexPath) as! ReviewCell
-       cell.layer.cornerRadius = 16
+        cell.layer.cornerRadius = 16
         let entry = self.reviews?.feed.entry[indexPath.item]
         cell.titleLabel.text = entry?.title.label
         cell.writerLabel.text = entry?.author.name.label
@@ -51,10 +51,9 @@ class ReviewsDetailController: UICollectionViewController, UICollectionViewDeleg
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize = UIScreen.main.bounds
-             let screenWidth = screenSize.width
+        let screenWidth = screenSize.width
         
-       // return .init(width: screenWidth - 15, height: 250)
-       return  CGSize(width: screenWidth - 50, height:220)
+       return  CGSize(width: screenWidth - 50, height:200)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

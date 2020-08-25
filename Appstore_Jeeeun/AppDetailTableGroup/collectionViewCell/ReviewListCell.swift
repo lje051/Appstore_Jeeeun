@@ -14,7 +14,7 @@ class ReviewListCell: UICollectionViewCell {
     @IBOutlet weak var reviewTitleLabel: UILabel!
         
       
-    var reviewsController: ReviewsDetailController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ReviewsDetailController.reuseIdentifier) as! ReviewsDetailController
+    var reviewsController: ReviewsDetailController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: ReviewsDetailController.identifier) as! ReviewsDetailController
 
     
    

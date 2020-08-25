@@ -18,6 +18,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     var searchList : [String] = []
     var timer: Timer?
     
+    //최근검색어
     var showRecentWord = false {
         didSet{
             if showRecentWord {
@@ -25,6 +26,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
             }
         }
     }
+    
+    //검색결과페이지
     var showResultPage = false {
         didSet{
             if showResultPage {
@@ -32,6 +35,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
             }
         }
     }
+    
     override func viewDidLoad() {
         self.navigationItem.title = "검색"
         setupSearchBar()
@@ -58,7 +62,10 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-   
+        
+        if Defaults[\.searchList].count > 0 {
+            searchList = Defaults[\.searchList]
+        }
         showRecentWord = true
         
         
@@ -92,6 +99,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         
         if !itemExists {
             Defaults[\.searchList].append(searchText)
+            searchList = Defaults[\.searchList]
         }
         
         print( "\(Defaults[\.searchList]) listlist")

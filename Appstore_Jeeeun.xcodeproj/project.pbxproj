@@ -34,6 +34,7 @@
 		4EE10EE824EE7C6C0049E79E /* FetchData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EE724EE7C6C0049E79E /* FetchData.swift */; };
 		4EE10EEB24EE7CBA0049E79E /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EEA24EE7CBA0049E79E /* SearchResult.swift */; };
 		4EE10EEE24EE819D0049E79E /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE10EED24EE819D0049E79E /* UIView+Layout.swift */; };
+		4EFAF7D1251D908F001E55DD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFAF7D0251D908F001E55DD /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		4EE10EE724EE7C6C0049E79E /* FetchData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchData.swift; sourceTree = "<group>"; };
 		4EE10EEA24EE7CBA0049E79E /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		4EE10EED24EE819D0049E79E /* UIView+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		4EFAF7D0251D908F001E55DD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		7A27B40EBF4CFBF4CE93C32B /* Pods-Appstore_Jeeeun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstore_Jeeeun.release.xcconfig"; path = "Target Support Files/Pods-Appstore_Jeeeun/Pods-Appstore_Jeeeun.release.xcconfig"; sourceTree = "<group>"; };
 		DF548AAB7C96FB27D795243E /* Pods_Appstore_Jeeeun.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Appstore_Jeeeun.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB4326B375247AD37D9D5129 /* Pods-Appstore_Jeeeun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Appstore_Jeeeun.debug.xcconfig"; path = "Target Support Files/Pods-Appstore_Jeeeun/Pods-Appstore_Jeeeun.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 		4EE10EBB24EE51B30049E79E /* Appstore_Jeeeun */ = {
 			isa = PBXGroup;
 			children = (
+				4EFAF7CF251D9053001E55DD /* ViewModel */,
 				4EB1C4BF24F0FC6700C51A65 /* AppDetailTableGroup */,
 				4EB1C4BC24F0E42F00C51A65 /* Extension */,
 				4EE10EE924EE7CAB0049E79E /* Model */,
@@ -196,6 +199,14 @@
 				4EB1C4C224F0FF2C00C51A65 /* Reviews.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4EFAF7CF251D9053001E55DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4EFAF7D0251D908F001E55DD /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		97FBE50CC37BEDC1EDEDB0CB /* Frameworks */ = {
@@ -348,6 +359,7 @@
 				4EE10EBD24EE51B30049E79E /* AppDelegate.swift in Sources */,
 				4EE10ED224EE52950049E79E /* MainTabController.swift in Sources */,
 				4E299A2F24F3B48800104524 /* AboutCell.swift in Sources */,
+				4EFAF7D1251D908F001E55DD /* SearchViewModel.swift in Sources */,
 				4EAD03B724F4B9D6007B9F81 /* Ex+Time.swift in Sources */,
 				4EE10EE824EE7C6C0049E79E /* FetchData.swift in Sources */,
 				4E19CAEA24EF77DC004E0AB5 /* WordTableViewController.swift in Sources */,

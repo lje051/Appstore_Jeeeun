@@ -18,7 +18,7 @@ extension Date {
         let weekAgo = calendar.date(byAdding: .day, value: -7, to: Date())!
 
         if minuteAgo < self {
-            let diff = Calendar.current.dateComponents([.second], from: self, to: Date()).second ?? 0
+            let diff = Calendar.current.dateComponents([.second], from: self, to: Date()).second  ?? 0
             return "\(diff)초 전"
         } else if hourAgo < self {
             let diff = Calendar.current.dateComponents([.minute], from: self, to: Date()).minute ?? 0

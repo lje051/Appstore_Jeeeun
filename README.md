@@ -4,7 +4,7 @@
 1.0
 Swift 5.0 
 
-![Image of the App](https://github.com/lje051/Appstore_Jeeeun/blob/master/screenshot.png =250x250)
+![](https://github.com/lje051/Appstore_Jeeeun/blob/master/screenshot.png =250x250)
 
 ## Build and Runtime Requirements
 + Xcode 11.6 

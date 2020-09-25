@@ -94,9 +94,20 @@ extension SearchListViewModel {
  
     
     func didSelect(at indexPath: IndexPath) -> Result {
+       
       //  guard let result = self.searchResults[indexPath] else { return }
         return self.searchResults[indexPath.row]
       }
+    
+    func searchTextWithTableViewCell(at indexPath:IndexPath){
+        if self.showRecentWord {
+        let searchText = self.sortedSearchList[indexPath.row]
+            self.showRecentWord = false
+            self.showResultPage = false
+         self.fetchAppList(searchText)
+           
+        }
+    }
 
 }
 

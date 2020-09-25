@@ -9,23 +9,23 @@
 import UIKit
 
 class SearchViewController: UITableViewController, UISearchBarDelegate  {
-
-  
+    
+    
     fileprivate let searchController = UISearchController(searchResultsController: nil)
     fileprivate let cellId = "searchView"
     private var searchListVM: SearchListViewModel!
     var timer: Timer?
     
-  
+    
     override func viewDidLoad() {
         self.navigationItem.title = "검색"
         setupSearchBar()
         searchListVM = SearchListViewModel(delegate: self)
         
-//        if Defaults[\.searchList].count > 0 {
-//            searchListVM.searchList = Defaults[\.searchList]
-//        }
-//
+        //        if Defaults[\.searchList].count > 0 {
+        //            searchListVM.searchList = Defaults[\.searchList]
+        //        }
+        //
         tableView.separatorStyle = .none
         tableView.register(RecentSearchCell.self, forCellReuseIdentifier: RecentSearchCell.identifier)
         tableView.reloadData()
@@ -33,7 +33,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         
     }
     
- 
+    
     fileprivate func setupSearchBar() {
         definesPresentationContext = true
         self.navigationItem.searchController = self.searchController
@@ -43,16 +43,16 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     }
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-    
+        
         searchListVM.showRecentWord = true
-    
+        
         return true
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchListVM.showRecentWord = false
         searchListVM.showResultPage = false
-   
+        
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -63,7 +63,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         searchListVM.showRecentWord = true
         
         searchListVM.searchText  = searchText
-    //    print("\(searchListVM.sortedSearchList)")
+        //    print("\(searchListVM.sortedSearchList)")
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -71,7 +71,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(searchBar.text ?? "")
         guard let searchText = searchBar.text  else { return }
-     
+        
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (_) in
             self.searchListVM.fetchAppList(searchText)
@@ -88,10 +88,14 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
             self.navigationController?.pushViewController(selectedAppController, animated: true)
             
             
+        }else if searchListVM.showRecentWord  {
+            searchListVM.searchTextWithTableViewCell(at: indexPath)
+            
         }
+        
     }
- 
-
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if searchListVM.showRecentWord {
             let cell = tableView.dequeueReusableCell(withIdentifier: RecommendedWordCell.identifier, for: indexPath) as! RecommendedWordCell
@@ -100,18 +104,25 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
             return cell
             
         }else if searchListVM.showResultPage{
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultCell.identifier, for: indexPath) as! SearchResultCell
             cell.appResult = searchListVM.searchResults[indexPath.row]
             cell.selectionStyle = .none
             return cell
         }
         else{
-
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: RecentSearchCell.identifier, for: indexPath) as! RecentSearchCell
+            cell.isUserInteractionEnabled = false
             cell.wordTableViewController.searchList = searchListVM.searchList
+            cell.wordTableViewController.didSelectHandler = { [weak self] str in
+                self?.searchListVM.showRecentWord = false
+                self?.searchListVM.showResultPage = false
+                self?.searchListVM.fetchAppList(str)
+            }
             cell.wordTableViewController.tableView.reloadData()
             return cell
-  
+            
         }
         
     }
@@ -134,7 +145,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         }else if searchListVM.showResultPage{
             return 330
         }else{
-    
+            
             return CGFloat(searchListVM.searchList.count * 44 + 90)
         }
         
@@ -149,8 +160,8 @@ extension SearchViewController:SearchViewModelProtocol {
     
     func onFetchCompleted() {
         
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

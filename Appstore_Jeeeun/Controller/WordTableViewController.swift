@@ -9,13 +9,15 @@
 import UIKit
 
 class WordTableViewController: UITableViewController {
-  
    
+    var didSelectHandler:((String) -> ())?
+    private var searchListVM: SearchListViewModel!
     var searchList : [String] = [] {
         didSet {
             tableView.reloadData()
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -45,5 +47,9 @@ class WordTableViewController: UITableViewController {
          return 44
     }
 
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let str  = self.searchList[indexPath.item]
+              didSelectHandler?(str)
+       
+    }
 }

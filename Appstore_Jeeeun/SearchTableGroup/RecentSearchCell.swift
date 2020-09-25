@@ -12,7 +12,7 @@ class RecentSearchCell : UITableViewCell {
    
     static let identifier = "recentSearchCell"
     let wordTableViewController = WordTableViewController()
-    
+
     
     fileprivate let recentSearchLabel: UILabel = {
         let label = UILabel()

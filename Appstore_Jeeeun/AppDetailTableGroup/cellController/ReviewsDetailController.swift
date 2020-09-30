@@ -43,9 +43,6 @@ class ReviewsDetailController: UICollectionViewController, UICollectionViewDeleg
         if let rating = Int(entry!.rating.label) {
               cell.setAppstoreStar(rating:rating)
         }
-      
-      
-        
         return cell
     }
    

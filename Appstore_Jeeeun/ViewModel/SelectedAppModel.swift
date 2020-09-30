@@ -51,6 +51,7 @@ extension SelectedAppModel {
         }
         
         let reviewsUrl = "https://itunes.apple.com/rss/customerreviews/page=1/id=\(appId)/sortby=mostrecent/json?lang=ko_kr&cc=kr"
+        
         FetchData.shared.fetchJSONData(urlString: reviewsUrl) { (result: Reviews?, err) in
             
             if let err = err {
@@ -64,9 +65,6 @@ extension SelectedAppModel {
             
         }
     }
-    
-    
   
-
 }
 

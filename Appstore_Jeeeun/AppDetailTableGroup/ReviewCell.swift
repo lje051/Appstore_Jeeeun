@@ -26,6 +26,9 @@ class ReviewCell: UICollectionViewCell {
     @IBOutlet weak var star5Imv: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     
+    func configure(){
+        
+    }
     func getStarImage(for number: Float, compareNum:Float) -> UIImage? {
            if number > compareNum ||  number == compareNum {
                let image = #imageLiteral(resourceName: "filledStar")

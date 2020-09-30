@@ -73,8 +73,6 @@ extension SearchListViewModel {
         
         print( "\(Defaults[\.searchList]) listlist")
   
-    
-            
             FetchData.shared.fetchApps(searchTerm: searchText) { (res, err) in
                 if let err = err {
                     print("Failed to fetch apps:", err)

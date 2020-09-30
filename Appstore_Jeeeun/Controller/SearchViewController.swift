@@ -21,11 +21,7 @@ class SearchViewController: UITableViewController, UISearchBarDelegate  {
         self.navigationItem.title = "검색"
         setupSearchBar()
         searchListVM = SearchListViewModel(delegate: self)
-        
-        //        if Defaults[\.searchList].count > 0 {
-        //            searchListVM.searchList = Defaults[\.searchList]
-        //        }
-        //
+      
         tableView.separatorStyle = .none
         tableView.register(RecentSearchCell.self, forCellReuseIdentifier: RecentSearchCell.identifier)
         tableView.reloadData()

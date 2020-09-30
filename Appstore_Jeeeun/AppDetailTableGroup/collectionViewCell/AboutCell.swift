@@ -11,11 +11,12 @@ import UIKit
 class AboutCell: UICollectionViewCell {
     static let identifier = "aboutCell"
     @IBOutlet weak var aboutAppLabel: UILabel!
+    
     var detailInfo: Result! {
            didSet {
                guard let detailInfo = detailInfo else { return }
                aboutAppLabel.text = detailInfo.description
-              // descLabel.text = detailInfo.artistName
+
            }
        }
        

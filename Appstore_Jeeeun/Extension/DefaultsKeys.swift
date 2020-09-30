@@ -19,21 +19,3 @@ extension DefaultsKeys {
  
 }
 
-extension DefaultsKeys {
-
-//    static func logout() {
-//        Defaults[\.isLogin] = false
-//        Defaults[\.loginKey] = ""
-//        Defaults[\.userId] = -1
-//        Defaults[\.pushToken] = ""
-//    }
-//
-//    static func leave() {
-//        Defaults[\.isLogin] = false
-//        Defaults[\.loginKey] = ""
-//        Defaults[\.userId] = -1
-//        Defaults[\.pushToken] = ""
-//        Defaults[\.email] = ""
-//    }
-    
-}
